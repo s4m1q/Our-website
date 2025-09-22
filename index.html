@@ -3,417 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xKamysh — Твоя енот-стримерша 🦝💜</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(135deg, #6a5acd, #9370db, #ba55d3);
-            background-attachment: fixed;
-            color: #fff;
-            line-height: 1.7;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Шапка */
-        header {
-            padding: 30px 0;
-            text-align: center;
-            background: rgba(25, 25, 50, 0.7);
-            backdrop-filter: blur(8px);
-            border-bottom: 3px solid #ff69b4;
-            margin-bottom: 30px;
-            border-radius: 0 0 20px 20px;
-        }
-
-        header h1 {
-            font-family: 'Nunito', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: #ff69b4;
-            text-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            display: inline-block;
-        }
-
-        header h1:hover {
-            transform: scale(1.05);
-        }
-
-        nav a {
-            color: #e0b0ff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background: rgba(255, 105, 180, 0.3);
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Героиня — главная секция */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(40, 30, 60, 0.7);
-            border-radius: 25px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero img {
-            width: 220px;
-            height: 220px;
-            border-radius: 20px;
-            border: 5px solid #ff69b4;
-            box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
-            margin-bottom: 25px;
-            transition: transform 0.4s ease;
-        }
-
-        .hero img:hover {
-            transform: scale(1.05) rotate(5deg);
-        }
-
-        .hero h2 {
-            font-size: 2.3rem;
-            color: #ff69b4;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            max-width: 800px;
-            margin: 0 auto 30px;
-            font-size: 1.15rem;
-            color: #e0b0ff;
-            line-height: 1.8;
-        }
-
-        /* Основные секции */
-        section {
-            background: rgba(40, 30, 60, 0.7);
-            padding: 40px;
-            border-radius: 20px;
-            margin: 40px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            display: none;
-        }
-
-        section:target {
-            display: block;
-            animation: fadeIn 0.8s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            color: #ff69b4;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        /* Информация о xKamysh */
-        .info p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #d8bfd8;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .info h3 {
-            color: #ff69b4;
-            margin: 30px 0 15px;
-            font-size: 1.5rem;
-            border-bottom: 2px dashed #ff69b4;
-            padding-bottom: 5px;
-        }
-
-        /* Фан-арты */
-        .fanart-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .fanart-item {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .fanart-item:hover {
-            transform: scale(1.03);
-        }
-
-        .fanart-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Клипы */
-        .clips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .clip-card {
-            background: rgba(60, 40, 90, 0.6);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .clip-card:hover {
-            background: rgba(80, 50, 120, 0.8);
-            transform: translateY(-5px);
-        }
-
-        .clip-card h3 {
-            color: #ff69b4;
-            margin-bottom: 10px;
-        }
-
-        .clip-card a {
-            display: inline-block;
-            margin-top: 15px;
-            background: #ff69b4;
-            color: #2c1838;
-            padding: 10px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .clip-card a:hover {
-            background: #ff1493;
-        }
-
-        /* Подвал — ССЫЛКИ! */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(25, 25, 50, 0.95);
-            margin-top: 50px;
-            border-top: 3px solid #ff69b4;
-            font-size: 1rem;
-            color: #d8bfd8;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .social-links {
-            margin: 25px 0;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 0 12px;
-            color: #e0b0ff;
-            font-weight: 600;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 30px;
-            background: rgba(255, 105, 180, 0.2);
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: rgba(255, 105, 180, 0.5);
-            color: #fff;
-            transform: translateY(-3px);
-        }
-
-        /* Адаптив */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            .hero img {
-                width: 180px;
-                height: 180px;
-            }
-            nav a {
-                font-size: 1rem;
-                margin: 5px;
-                padding: 6px 12px;
-            }
-            .info h3 {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+    <title>xKamysh - Стример и создатель контента</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <!-- 🔗 Заголовок — ссылка на главную (якорь на #top) -->
-            <a href="#top" style="text-decoration: none; color: inherit;">
-                <h1>xKamysh 🦝</h1>
-            </a>
-            <nav>
-                <a href="#info">Информация</a>
-                <a href="#fanart">Фан-арты</a>
-                <a href="#clips">Клипы</a>
-            </nav>
-        </div>
+        <nav id="main-nav">
+            <div class="nav-container">
+                <h1 class="logo">xKamysh</h1>
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">Информация</a></li>
+                    <li><a href="content.html">Контент</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <div class="container">
-        <!-- 🎯 Якорь для возврата на главную -->
-        <section id="top" class="hero">
-            <!-- Замени на реальное изображение аватара xKamysh -->
-            <img src="https://i.imgur.com/7QZv0yH.png" alt="Аватар xKamysh — милый енот">
-            <h2>Привет от твоей енот-стримерши! 💜</h2>
-            <p>
-                Привет! xKamysh — v-тубер с аватаром очаровательного енота.<br>
-                Начала стримить просто для души — общаться, играть, делиться настроением.<br>
-                Теперь у неё тут целое уютное сообщество! 💜<br>
-                Любит игры всех жанров — от хорроров до уютных симуляторов, обожает смотреть фильмы на стримах и болтать обо всём на свете.<br>
-                Главное — атмосфера добра, поддержки и лёгкого безумия.<br>
-                Присоединяйся — будем создавать её вместе!
-            </p>
-        </section>
-
-        <!-- Информация о xKamysh -->
-        <section id="info" class="info">
-            <h2>✨ Информация о xKamysh</h2>
-
-            <p>
-                Если ты здесь — значит, ты тоже влюбился в эту харизматичную стримершу с мордочкой енота. Ниже — всё, что стоит знать о её пути, увлечениях и том, как она превратила страсть к общению в настоящее вдохновение для тысяч зрителей.
-            </p>
-
-            <h3>🧭 Начало пути</h3>
-            <p>
-                xKamysh появилась на свет 16 ноября 2001 года в Барнауле — городе, откуда начался путь к большому стриминговому небу. С детства она увлекалась вселенными научной фантастики и фэнтези, а в 19 лет открыла для себя мир Just Chatting — формат, в котором общение становится искусством. До Twitch она успела заявить о себе на других платформах, но именно здесь её талант раскрылся по-настоящему.
-            </p>
-
-            <h3>🚀 Прорыв и рост</h3>
-            <p>
-                2018 год стал поворотным — именно тогда её стримы начали собирать тысячи зрителей. Сегодня за ней следят более 5000 подписчиков, и каждый из них знает: здесь всегда тепло, честно и с юмором. Её история — пример того, как упорство, искренность и любовь к тому, что ты делаешь, превращаются в успех.
-            </p>
-
-            <h3>💼 Карьера и доход</h3>
-            <p>
-                Стриминг стал не просто хобби, а полноценной профессией. Благодаря преданной аудитории, партнёрствам и кропотливой работе, xKamysh построила устойчивую финансовую основу и стала настоящим предпринимателем в digital-индустрии. Её пример вдохновляет многих — ведь это доказательство: мечту можно превратить в профессию.
-            </p>
-
-            <h3>🎮 Стрим-сетап</h3>
-            <p>
-                Чтобы зрители чувствовали себя комфортно, xKamysh вложила душу (и немало средств) в своё оборудование:
-            </p>
-            <ul style="margin-left: 20px; color: #e0b0ff; margin-bottom: 20px;">
-                <li>Монитор: ASUS VG258QR</li>
-                <li>Наушники: Logitech G231</li>
-                <li>Коврик: CORSAIR MM500</li>
-                <li>Клавиатура: Trust GXT 890 Tastiera</li>
-                <li>Мышь: Razer Basilisk Quartz</li>
-            </ul>
-            <p>
-                Каждый элемент тщательно подобран — чтобы картинка была чёткой, звук — чистым, а контент — на высшем уровне.
-            </p>
-
-            <h3>🎹 За кадром</h3>
-            <p>
-                За аватаром енота скрывается многогранная личность. xKamysh играет на фортепиано, сочиняет музыку и поёт — творчество для неё не ограничивается стримами. Она часто делится, как игры помогают справляться со стрессом и сложными моментами, и подчёркивает важность баланса между работой и личной жизнью. Это не просто стример — это человек, который умеет заботиться и о себе, и о своей аудитории.
-            </p>
-
-            <h3>🔮 Планы на будущее</h3>
-            <p>
-                Впереди — масштабные проекты! Одна из целей — запуск собственной медиа-компании, связанной с игровой индустрией. Она постоянно экспериментирует, улучшает контент и хочет подарить зрителям ещё больше интересного. Что именно? Держим в секрете — но точно будет громко, ярко и по-енотьи уютно 💜
-            </p>
-        </section>
-
-        <!-- Фан-арты -->
-        <section id="fanart" class="fanart">
-            <h2>🎨 Фан-арты</h2>
-            <div class="fanart-grid">
-                <!-- Замени ссылки на реальные изображения -->
-                <div class="fanart-item">
-                    <img src="https://i.imgur.com/JK7X1lF.jpg" alt="Фан-арт xKamysh 1">
-                </div>
-                <div class="fanart-item">
-                    <img src="https://i.imgur.com/9R2kXqP.jpg" alt="Фан-арт xKamysh 2">
-                </div>
-                <div class="fanart-item">
-                    <img src="https://i.imgur.com/mVQYQwA.jpg" alt="Фан-арт xKamysh 3">
-                </div>
-                <div class="fanart-item">
-                    <img src="https://i.imgur.com/5LmR8sD.jpg" alt="Фан-арт xKamysh 4">
-                </div>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>xKamysh</h2>
+                <p>Стример, создатель контента и яркая личность</p>
+                <button id="theme-toggle" class="cta-button">Сменить тему</button>
             </div>
         </section>
 
-        <!-- Клипы -->
-        <section id="clips" class="clips">
-            <h2>🎬 Клипы</h2>
-            <div class="clips-grid">
-                <div class="clip-card">
-                    <h3>«Когда чат загнул» 😂</h3>
-                    <p>Эпичная реакция на мемы</p>
-                    <a href="https://www.twitch.tv/xkamysh/clip/..." target="_blank">Смотреть на Twitch</a>
+        <section id="about">
+            <article>
+                <h2>О xKamysh</h2>
+                <img src="https://i.imgur.com/placeholder.jpg" alt="xKamysh" class="profile-img">
+                <p>xKamysh — популярный российский стример, известный своими трансляциями в категории Just Chatting и уникальным подходом к созданию контента.</p>
+                
+                <h3>Основные факты:</h3>
+                <ul>
+                    <li>Дата рождения: 16 ноября 2001 года</li>
+                    <li>Место рождения: Барнаул, Россия</li>
+                    <li>Основная платформа: Twitch</li>
+                    <li>Направление: Just Chatting, общение с аудиторией</li>
+                </ul>
+                
+                <h3>Социальные сети:</h3>
+                <div class="social-links">
+                    <a href="https://xkamysh.carrd.co" target="_blank" class="social-link">Официальный сайт</a>
+                    <a href="https://twitch.tv/xkamysh" target="_blank" class="social-link">Twitch</a>
+                    <a href="https://www.youtube.com/@kamyshnya" target="_blank" class="social-link">YouTube</a>
+                    <a href="https://discord.com/invite/AqMbAzsxhe" target="_blank" class="social-link">Discord</a>
+                    <a href="https://vk.com/kamyshovnik" target="_blank" class="social-link">ВКонтакте</a>
+                    <a href="https://www.tiktok.com/@xkamysh" target="_blank" class="social-link">TikTok</a>
                 </div>
-                <div class="clip-card">
-                    <h3>«Победа в хорроре» 🎮</h3>
-                    <p>Орала минут 5, но прошла!</p>
-                    <a href="https://www.twitch.tv/xkamysh/clip/..." target="_blank">Смотреть на Twitch</a>
-                </div>
-                <div class="clip-card">
-                    <h3>«Фильм + чат = хаос» 🍿</h3>
-                    <p>Смотрели “Матрицу” и не поняли ничего</p>
-                    <a href="https://www.twitch.tv/xkamysh/clip/..." target="_blank">Смотреть на Twitch</a>
-                </div>
-            </div>
+            </article>
         </section>
-    </div>
+    </main>
 
     <footer>
-        <div class="container">
-            <h3>🔗 Где найти xKamysh</h3>
-            <div class="social-links">
-                <a href="https://xkamysh.carrd.co" target="_blank">🌐 Официальный сайт</a>
-                <a href="https://twitch.tv/xkamysh" target="_blank">🎮 Twitch</a>
-                <a href="https://www.youtube.com/@kamyshnya" target="_blank">🎥 YouTube</a>
-                <a href="https://www.tiktok.com/@xkamysh" target="_blank">🎵 TikTok</a>
-                <a href="https://discord.gg/AqMbAzsxhe" target="_blank">💬 Discord сервер</a>
-                <a href="https://vk.com/kamyshovnik" target="_blank">💜 VK</a>
-            </div>
-            <p style="margin-top: 30px;">© 2025 xKamysh Fan Site • Неофициальный фан-сайт</p>
-            <p>Создан с любовью к енотам, стримам и уютному чату 💜🦝</p>
-        </div>
+        <p>&copy; 2025 Фан-сайт о xKamysh. Неофициальный ресурс, созданный поклонниками.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

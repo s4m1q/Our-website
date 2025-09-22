@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контент xKamysh | xKamysh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <div class="nav-container">
+                <h1 class="logo">xKamysh</h1>
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">Информация</a></li>
+                    <li><a href="content.html">Контент</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="content">
+            <h2>Контент xKamysh</h2>
+            
+            <article class="content-card">
+                <h3>Just Chatting</h3>
+                <img src="https://i.imgur.com/placeholder.jpg" alt="Just Chatting" class="content-img">
+                <p>Основное направление контента xKamysh - трансляции в категории Just Chatting, где он общается с аудиторией на различные темы.</p>
+                <button class="content-details">Подробнее</button>
+                <div class="details-content">
+                    <p><strong>Особенности:</strong> Живое общение, обсуждение актуальных тем, ответы на вопросы</p>
+                    <p><strong>Платформа:</strong> Twitch</p>
+                </div>
+            </article>
+            
+            <article class="content-card">
+                <h3>Музыкальные трансляции</h3>
+                <img src="https://i.imgur.com/placeholder.jpg" alt="Музыка" class="content-img">
+                <p>xKamysh иногда радует зрителей музыкальными трансляциями, где демонстрирует свои навыки игры на фортепиано и пения.</p>
+                <button class="content-details">Подробнее</button>
+                <div class="details-content">
+                    <p><strong>Особенности:</strong> Игра на фортепиано, каверы, авторские композиции</p>
+                    <p><strong>Периодичность:</strong> Специальные эфиры</p>
+                </div>
+            </article>
+            
+            <article class="content-card">
+                <h3>Социальные сети</h3>
+                <img src="https://i.imgur.com/placeholder.jpg" alt="Соцсети" class="content-img">
+                <p>Помимо Twitch, xKamysh активно ведет несколько социальных сетей, где делится дополнительным контентом и общается с подписчиками.</p>
+                <button class="content-details">Подробнее</button>
+                <div class="details-content">
+                    <p><strong>Платформы:</strong> YouTube, TikTok, VK</p>
+                    <p><strong>Тип контента:</strong> Короткие видео, анонсы, закулисные материалы</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Фан-сайт о xKamysh. Неофициальный ресурс, созданный поклонниками.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.content-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const details = this.nextElementSibling;
+                details.style.display = details.style.display === 'block' ? 'none' : 'block';
+                this.textContent = details.style.display === 'block' ? 'Скрыть' : 'Подробнее';
+            });
+        });
+    </script>
+</body>
+</html>

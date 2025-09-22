@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея | xKamysh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <div class="nav-container">
+                <h1 class="logo">xKamysh</h1>
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">Информация</a></li>
+                    <li><a href="content.html">Контент</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gallery">
+            <h2>Галерея xKamysh</h2>
+                        
+                        
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="streams">
+                    <img src="https://i.imgur.com/placeholder.jpg" alt="Стрим xKamysh">
+                    <p>Прямой эфир на Twitch</p>
+                </div>
+                
+                <div class="gallery-item" data-category="streams">
+                    <img src="https://i.imgur.com/placeholder.jpg" alt="Общение с чатом">
+                    <p>Моменты общения с аудиторией</p>
+                </div>
+                
+                <div class="gallery-item" data-category="community">
+                    <img src="https://i.imgur.com/placeholder.jpg" alt="Сообщество">
+                    <p>Активное сообщество поклонников</p>
+                </div>
+                
+                <div class="gallery-item" data-category="community">
+                    <img src="https://i.imgur.com/placeholder.jpg" alt="Дискорд">
+                    <p>Активность в Discord</p>
+                </div>
+                
+                <div class="gallery-item" data-category="equipment">
+                    <img src="https://i.imgur.com/placeholder.jpg" alt="Стриминговая setup">
+                    <p>Профессиональная setup для стримов</p>
+                </div>
+                
+                <div class="gallery-item" data-category="equipment">
+                    <img src="https://i.imgur.com/placeholder.jpg" alt="Оборудование">
+                    <p>Качественное оборудование для трансляций</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Фан-сайт о xKamysh. Неофициальный ресурс, созданный поклонниками.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const items = document.querySelectorAll('.gallery-item');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
