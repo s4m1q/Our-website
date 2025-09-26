@@ -5,8 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xKamysh - Стример и создатель контента</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Кнопка "Сменить тему" — в правом верхнем углу */
+        #theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Блок с изображением и подписью */
+        .hero-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            margin-bottom: 30px;
+			border-radius: 12px;
+        }
+
+        .hero-banner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        /* Рамка с текстом — теперь со скруглёнными углами */
+        .hero-caption {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 18px;   /* ← Здесь задаётся скругление */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            max-width: 600px;
+            font-size: 1.1em;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .hero-caption h2 {
+            margin: 5px 0;
+            font-size: 2em;
+            color: #fff;
+        }
+
+        .hero-caption p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #ddd;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Кнопка смены темы -->
+    <button id="theme-toggle">Тёмная тема</button>
+
     <header>
         <nav id="main-nav">
             <div class="nav-container">
@@ -23,18 +92,20 @@
     </header>
 
     <main>
-        <section id="hero">
-            <div class="hero-content">
+        <!-- Главный баннер с фото и подписью -->
+        <section class="hero-banner">
+            <img src="main.jpg" alt="xKamysh" />
+            <div class="hero-caption">
                 <h2>xKamysh</h2>
                 <p>Стример, создатель контента и яркая личность</p>
-                <button id="theme-toggle" class="cta-button">Сменить тему</button>
             </div>
         </section>
 
+        <!-- Основная информация -->
         <section id="about">
             <article>
                 <h2>О xKamysh</h2>
-                <img src="https://i.imgur.com/placeholder.jpg" alt="xKamysh" class="profile-img">
+                <img src="ava.jpg" alt="xKamysh" class="profile-img">
                 <p>xKamysh — популярный российский стример, известный своими трансляциями в категории Just Chatting и уникальным подходом к созданию контента.</p>
                 
                 <h3>Основные факты:</h3>
@@ -63,5 +134,10 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
 </body>
 </html>

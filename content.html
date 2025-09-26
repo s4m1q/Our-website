@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контент xKamysh | xKamysh</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .video-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #000;
+        }
+        .video-card video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .video-card h3 {
+            text-align: center;
+            margin: 10px 0 0;
+            font-size: 1.1em;
+            color: #fff;
+            background: #222;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,40 +54,61 @@
 
     <main>
         <section id="content">
-            <h2>Контент xKamysh</h2>
-            
-            <article class="content-card">
-                <h3>Just Chatting</h3>
-                <img src="https://i.imgur.com/placeholder.jpg" alt="Just Chatting" class="content-img">
-                <p>Основное направление контента xKamysh - трансляции в категории Just Chatting, где он общается с аудиторией на различные темы.</p>
-                <button class="content-details">Подробнее</button>
-                <div class="details-content">
-                    <p><strong>Особенности:</strong> Живое общение, обсуждение актуальных тем, ответы на вопросы</p>
-                    <p><strong>Платформа:</strong> Twitch</p>
-                </div>
-            </article>
-            
-            <article class="content-card">
-                <h3>Музыкальные трансляции</h3>
-                <img src="https://i.imgur.com/placeholder.jpg" alt="Музыка" class="content-img">
-                <p>xKamysh иногда радует зрителей музыкальными трансляциями, где демонстрирует свои навыки игры на фортепиано и пения.</p>
-                <button class="content-details">Подробнее</button>
-                <div class="details-content">
-                    <p><strong>Особенности:</strong> Игра на фортепиано, каверы, авторские композиции</p>
-                    <p><strong>Периодичность:</strong> Специальные эфиры</p>
-                </div>
-            </article>
-            
-            <article class="content-card">
-                <h3>Социальные сети</h3>
-                <img src="https://i.imgur.com/placeholder.jpg" alt="Соцсети" class="content-img">
-                <p>Помимо Twitch, xKamysh активно ведет несколько социальных сетей, где делится дополнительным контентом и общается с подписчиками.</p>
-                <button class="content-details">Подробнее</button>
-                <div class="details-content">
-                    <p><strong>Платформы:</strong> YouTube, TikTok, VK</p>
-                    <p><strong>Тип контента:</strong> Короткие видео, анонсы, закулисные материалы</p>
-                </div>
-            </article>
+            <h2 style="text-align: center; width: 100%;">Видео от xKamysh</h2>
+
+            <!-- Видео 1 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает тег video.
+                </video>
+                <h3>Видео 1</h3>
+            </div>
+
+            <!-- Видео 2 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video2.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает тег video.
+                </video>
+                <h3>Видео 2</h3>
+            </div>
+
+            <!-- Видео 3 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video3.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает тег video.
+                </video>
+                <h3>Видео 3</h3>
+            </div>
+
+            <!-- Видео 4 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video4.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает тег video.
+                </video>
+                <h3>Видео 4</h3>
+            </div>
+
+            <!-- Видео 5 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video5.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает тег video.
+                </video>
+                <h3>Видео 5</h3>
+            </div>
+
+            <!-- Видео 6 -->
+            <div class="video-card">
+                <video controls>
+                    <source src="video6.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает тег video.
+                </video>
+                <h3>Видео 6</h3>
+            </div>
         </section>
     </main>
 
@@ -66,14 +117,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        document.querySelectorAll('.content-details').forEach(button => {
-            button.addEventListener('click', function() {
-                const details = this.nextElementSibling;
-                details.style.display = details.style.display === 'block' ? 'none' : 'block';
-                this.textContent = details.style.display === 'block' ? 'Скрыть' : 'Подробнее';
-            });
-        });
-    </script>
 </body>
 </html>

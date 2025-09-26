@@ -23,39 +23,38 @@
     </header>
 
     <main>
-        <section id="gallery">
-            <h2>Галерея xKamysh</h2>
-                        
-                        
+
+        <!-- Новая секция: Коллаборации -->
+        <section id="collabs">
+            <h2>Коллаборации xKamysh</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" data-category="streams">
-                    <img src="https://i.imgur.com/placeholder.jpg" alt="Стрим xKamysh">
-                    <p>Прямой эфир на Twitch</p>
+                <div class="gallery-item" data-category="collab">
+                    <img src="Qchaan9.jpg" alt="Коллаб с Qchaan 9">
+                    <p>Коллаб с Qchaan 9</p>
                 </div>
-                
-                <div class="gallery-item" data-category="streams">
-                    <img src="https://i.imgur.com/placeholder.jpg" alt="Общение с чатом">
-                    <p>Моменты общения с аудиторией</p>
+                <div class="gallery-item" data-category="collab">
+                    <img src="lali.jpg" alt="Коллаб laliQtako">
+                    <p>Коллаб laliQtako</p>
                 </div>
-                
-                <div class="gallery-item" data-category="community">
-                    <img src="https://i.imgur.com/placeholder.jpg" alt="Сообщество">
-                    <p>Активное сообщество поклонников</p>
+                <div class="gallery-item" data-category="collab">
+                    <img src="podcast.jpg" alt="Подкаст с nyamuras">
+                    <p>Подкаст с nyamuras</p>
                 </div>
-                
-                <div class="gallery-item" data-category="community">
-                    <img src="https://i.imgur.com/placeholder.jpg" alt="Дискорд">
-                    <p>Активность в Discord</p>
+            </div>
+        </section>
+
+        <!-- Новая секция: Фан-арты -->
+        <section id="fanart">
+            <h2>Фан-арты</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="fanart">
+                    <img src="fan1.jpg">
                 </div>
-                
-                <div class="gallery-item" data-category="equipment">
-                    <img src="https://i.imgur.com/placeholder.jpg" alt="Стриминговая setup">
-                    <p>Профессиональная setup для стримов</p>
+                <div class="gallery-item" data-category="fanart">
+                    <img src="fan2.jpg">
                 </div>
-                
-                <div class="gallery-item" data-category="equipment">
-                    <img src="https://i.imgur.com/placeholder.jpg" alt="Оборудование">
-                    <p>Качественное оборудование для трансляций</p>
+                <div class="gallery-item" data-category="fanart">
+                    <img src="fan3.jpg">
                 </div>
             </div>
         </section>
@@ -67,6 +66,7 @@
 
     <script src="script.js"></script>
     <script>
+        // Фильтрация (оставляем как есть, работает только для основной галереи)
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', function() {
                 document.querySelectorAll('.filter-btn').forEach(btn => {
