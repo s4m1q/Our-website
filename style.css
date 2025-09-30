@@ -1,4 +1,4 @@
-/* Базовые стили */
+﻿/* Базовые стили */
 * {
     margin: 0;
     padding: 0;
@@ -189,7 +189,7 @@ body.dark-theme footer {
     background-color: #111;
 }
 
-/* Стили для страницы информации */
+
 .fact-display {
     margin-top: 1rem;
     padding: 1rem;
@@ -202,7 +202,7 @@ body.dark-theme .fact-display {
     background-color: #333;
 }
 
-/* Стили для страницы контента */
+
 .content-card {
     background-color: white;
     border-radius: 8px;
@@ -237,7 +237,6 @@ body.dark-theme .details-content {
     background-color: #333;
 }
 
-/* Стили для галереи */
 .filter-buttons {
     margin-bottom: 2rem;
     text-align: center;
@@ -296,7 +295,6 @@ body.dark-theme .gallery-item {
     text-align: center;
 }
 
-/* Медиа-запросы для адаптивности */
 
 /* Мобильная версия (≤ 768px) */
 @media (max-width: 768px) {
