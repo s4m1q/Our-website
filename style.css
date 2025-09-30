@@ -26,22 +26,72 @@ header {
     top: 0;
     z-index: 100;
 }
-/* Сменить тему */
-#theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    background-color: #4a4a4a;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Кнопка смены темы в навигации */
+.theme-toggle-nav {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 1.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.theme-toggle-nav:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Главный баннер */
 .hero-banner {
     display: flex;
     flex-direction: column;
@@ -52,7 +102,7 @@ header {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: white;
     margin-bottom: 30px;
-	border-radius: 12px;
+    border-radius: 12px;
 }
 
 .hero-banner img {
@@ -64,7 +114,6 @@ header {
     object-fit: contain;
 }
 
-        
 .hero-caption {
     background: rgba(255, 255, 255, 0.1);
     padding: 15px 25px;
@@ -87,50 +136,6 @@ header {
     margin: 5px 0;
     font-size: 1.1em;
     color: #ddd;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav-menu li {
-    margin-left: 1.5rem;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.nav-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
 }
 
 /* Основной контент */
@@ -251,7 +256,6 @@ body.dark-theme footer {
     background-color: #111;
 }
 
-
 .fact-display {
     margin-top: 1rem;
     padding: 1rem;
@@ -263,7 +267,6 @@ body.dark-theme footer {
 body.dark-theme .fact-display {
     background-color: #333;
 }
-
 
 .content-card {
     background-color: white;
@@ -357,7 +360,6 @@ body.dark-theme .gallery-item {
     text-align: center;
 }
 
-
 /* Мобильная версия (≤ 768px) */
 @media (max-width: 768px) {
     .nav-container {
@@ -370,6 +372,7 @@ body.dark-theme .gallery-item {
         flex-direction: column;
         width: 100%;
         display: none;
+        margin-top: 1rem;
     }
     
     .nav-menu.active {
@@ -378,6 +381,13 @@ body.dark-theme .gallery-item {
     
     .nav-menu li {
         margin: 0.5rem 0;
+        margin-left: 0;
+    }
+    
+    .theme-toggle-nav {
+        margin: 1rem 0 0 0;
+        width: 100%;
+        text-align: center;
     }
     
     .menu-toggle {

@@ -12,7 +12,7 @@ if (themeToggle) {
             this.textContent = 'Светлая тема';
         } else {
             localStorage.setItem('theme', 'light');
-            this.textContent = 'Темная тема';
+            this.textContent = 'Тёмная тема';
         }
     });
 }
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             themeToggle.textContent = 'Светлая тема';
         }
     } else if (themeToggle) {
-        themeToggle.textContent = 'Темная тема';
+        themeToggle.textContent = 'Тёмная тема';
     }
 });
 
