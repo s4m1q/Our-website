@@ -87,6 +87,34 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
 }
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.video-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #000;
+}
+.video-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.video-card h3 {
+    text-align: center;
+    margin: 10px 0 0;
+    font-size: 1.1em;
+    color: #fff;
+    background: #222;
+    padding: 10px;
+}
 
 .hero-banner {
     display: flex;
