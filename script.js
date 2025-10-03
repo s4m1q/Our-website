@@ -1,12 +1,8 @@
-// Основной JavaScript код для всех страниц
-
-// Переключение темы
 const themeToggle = document.getElementById('theme-toggle');
 if (themeToggle) {
     themeToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark-theme');
         
-        // Сохраняем выбор темы в localStorage
         if (document.body.classList.contains('dark-theme')) {
             localStorage.setItem('theme', 'dark');
             this.textContent = 'Светлая тема';
@@ -17,7 +13,6 @@ if (themeToggle) {
     });
 }
 
-// Загрузка сохраненной темы при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
     const themeToggle = document.getElementById('theme-toggle');
@@ -32,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Мобильное меню (работает на всех страницах)
 const menuToggle = document.getElementById('menu-toggle');
 if (menuToggle) {
     menuToggle.addEventListener('click', function() {
@@ -40,7 +34,6 @@ if (menuToggle) {
     });
 }
 
-// Закрытие меню при клике на ссылку (для мобильных устройств)
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', function() {
         document.querySelector('.nav-menu').classList.remove('active');
